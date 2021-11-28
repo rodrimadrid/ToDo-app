@@ -29,20 +29,50 @@
   justify-content: space-between;
   border: 1.5px solid grey;
   border-radius: 15%;
-  box-shadow: 0 3px grey;
+  box-shadow: 0 0 10px grey;
   margin: 0.6em;
   padding: 0.5em;
 }
 .sub {
   display: flex;
 }
-.todo-row.checked {
-  background-color: rgb(35, 165, 35);
+.todo-row.checked { 
+  border: 1.5px solid rgb(35, 165, 35);
+  box-shadow: 0 0 10px rgb(35, 165, 35);
 }
 .todo {
   margin-right: 5px;
   margin-left: 5px;
 }
-.btn {
-  width: 1.3em;
+.delete-icon{
+  transform: scale(0.9);
+  transition: 0.2s;
+}
+.add-task{
+  width:35%;
+  height: 2em;
+  border-radius: 10%;
+  
+}
+input:focus, textarea:focus {   
+     outline: none !important; 
+     border-color: #719ECE;    
+     box-shadow: 0 0 10px #719ECE;
+}
+.btn-add{
+  height: 2em;
+  width: 4.5em;
+  border-radius: 25%;
+  background-color: transparent;
+  border-color:dodgerblue
+}
+.btn-add-selected{
+  background-color: dodgerblue;
+}
+.btn-clean{
+  margin: 2em;
+  background-color: transparent;
+  border-radius: 10%;
+  border-color: red;
+  color: red;
 }

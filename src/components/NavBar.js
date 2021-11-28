@@ -16,6 +16,7 @@ function NavBar() {
           Completed
         </Nav.Link>
       </Navbar>
+      
     </>
   );
 }

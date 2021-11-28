@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "react-bootstrap";
+import { FaTrashAlt } from "react-icons/fa";
 
 const Todo = ({ todo, handleCheck, handleDelete }) => {
   const [checked, setChecked] = useState(todo.completed);
@@ -9,6 +9,9 @@ const Todo = ({ todo, handleCheck, handleDelete }) => {
       ? document.getElementById(todo.id).classList.add("checked")
       : document.getElementById(todo.id).classList.remove("checked");
   });
+  const animation = (e)=>{
+    e.target.classList.add('delete-icon')
+  }
   return (
     <div className="todo-row" id={todo.id}>
       <div className="sub">
@@ -23,9 +26,13 @@ const Todo = ({ todo, handleCheck, handleDelete }) => {
         <p className="todo">{todo.title}</p>
       </div>
       {checked && (
-        <button className="btn" id={todo.id} onClick={handleDelete}>
-          -
-        </button>
+          <FaTrashAlt 
+              size={18}
+              color='red' 
+              id={todo.id} 
+              onClick={handleDelete}
+              onMouseDown={animation}
+              /> 
       )}
     </div>
   );
